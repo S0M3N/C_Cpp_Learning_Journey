@@ -1,0 +1,5 @@
+Factors
+finding and printing<c> done.
+storing in array<c> done.
+storing in vector<cpp> done.
+storing in linked list<c> done.
