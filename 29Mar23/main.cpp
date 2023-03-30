@@ -9,9 +9,15 @@ using namespace std;
 
 int menu(){
 	int choice;
-	restart:
 	cout<<"1. Area of circle\n"<<"2. Area of rectangle\n"<<"3.  Simple Interest\n"<<"4. Compound Interest\n"<<"5. Celsius To Fahrenheit\n"<<"Enter your choice: ";
 	cin>>choice;
+	return choice;
+}
+
+int work(){
+	int choice;
+	restart:
+	choice = menu();
 	int rad, p, t, n, l, b;
 	float r, c;
 	switch(choice){
@@ -60,6 +66,6 @@ int menu(){
 }
 
 int main(){
-	menu();
+	work();
 	return 0;
 }
