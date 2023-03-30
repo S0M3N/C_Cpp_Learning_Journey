@@ -7,12 +7,13 @@
 
 using namespace std;
 
-int main(){
+int menu(){
 	int choice;
-	int rad, p, t, n, l, b;
-	float r, c;
+	restart:
 	cout<<"1. Area of circle\n"<<"2. Area of rectangle\n"<<"3.  Simple Interest\n"<<"4. Compound Interest\n"<<"5. Celsius To Fahrenheit\n"<<"Enter your choice: ";
 	cin>>choice;
+	int rad, p, t, n, l, b;
+	float r, c;
 	switch(choice){
 	case 1:
 		cout<<"Enter radius of circle: ";
@@ -52,8 +53,13 @@ int main(){
 		cout<<"Temprature in degree F: "<<celsiusToFahrenheit(c)<<endl;
 		break;
 	default:
-		cout<<"invalid Input";		
+		cout<<"invalid Input";	
+		goto restart;	
 	}
 	return 0;
+}
 
+int main(){
+	menu();
+	return 0;
 }
