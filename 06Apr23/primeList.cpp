@@ -24,8 +24,8 @@ TYPE is_Prime(const int &num){
 
 vector<int> primeList(const int &k){
 	vector<int> res;
-	int i=0, n=0;
-	while(n>=0){
+	int i=0, n=2;
+	while(n>0){
 		if(i>=k) return res;
 		if(is_Prime(n) == PRIME_NUMBER){
 			res.push_back(n);
@@ -38,10 +38,12 @@ vector<int> primeList(const int &k){
 
 int main(){
 	int n;
-	cout<<"Enter the number: ";
 	cin>>n;
+	if(n>6000) goto end;
 	for(auto i : primeList(n)){
-		cout<<i<<endl;
+		cout<<i<<" ";
 	}
+	cout<<endl;
+	end:
 	return 0;
 }
