@@ -4,23 +4,29 @@
 
 using namespace std;
 
-int main(){
-    string text;
-    int check = 1, j= 0;
+bool checkPalin(string text){
+    int j = 0;
     stack<char> STACK;
-    cout<<"Enter the string: ";
-    cin>>text;
+
     for(auto i: text){
         STACK.push(i);
     }
 
     while(STACK.size()>0){
-        if(STACK.top() != text.at(j)) check=0;
+        if(STACK.top() != text.at(j)) return 0;
         STACK.pop();
         j++;
     }
 
-    (check) ? cout<<"Palindrome": cout<<"Not palindrome"<<endl;
+    return 1;
+}
+
+int main(){
+    string text;
+    cout<<"Enter the string: ";
+    cin>>text;
+
+    (checkPalin(text)) ? cout<<"Palindrome\n": cout<<"Not palindrome\n";
 
     return 0;
 }
